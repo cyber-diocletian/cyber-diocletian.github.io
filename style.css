@@ -4,7 +4,6 @@ body{
 	text-align: center;
 	margin-left: 10%;
 	margin-right: 10%;
-	font-size: 105%;
 }
 
 h1{
@@ -24,7 +23,6 @@ a:hover{
 
 ul{
 	padding-left: 0;
-	font-size: 110%;
 	margin-bottom: 5px;
 }
 
@@ -34,13 +32,13 @@ header{
 
 header li{
 	display: inline;
-	font-size: 18px;
 }
 
 .mainbody{
 	font-family: monospace;
 	margin-left: 10vw;
 	margin-right: 10vw;
+	font-size: 105%;
 }
 
 .mainbody li{
