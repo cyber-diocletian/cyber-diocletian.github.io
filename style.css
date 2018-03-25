@@ -1,6 +1,6 @@
 body{
-	#background-color: #002b36;
-	#color:#00afaf;
+	background-color: #001010;
+	color:#00afaf;
 	text-align: center;
 	margin-left: 10%;
 	margin-right: 10%;
@@ -23,7 +23,7 @@ a:hover{
 }
 
 ul{
-	padding-left: 0
+	padding-left: 0;
 }
 
 header{
@@ -32,13 +32,13 @@ header{
 
 header li{
 	display: inline;
-	font-size: 105%;
+	font-size: 18px;
 }
 
 .mainbody{
 	font-family: monospace;
-	#margin-left: 15%;
-	#margin-right: 15%;
+	margin-left: 10vw;
+	margin-right: 10vw;
 }
 
 .mainbody li{
@@ -48,4 +48,8 @@ header li{
 .mainbody img{
 	border-style: outset;
 	border-width: thick;
+}
+
+footer{
+	border-top:#586e75 1px solid;
 }
