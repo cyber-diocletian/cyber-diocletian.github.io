@@ -32,6 +32,8 @@ header{
 
 header li{
 	display: inline;
+	min-height: 125%;
+	font-size: 115%;
 }
 
 .mainbody{
