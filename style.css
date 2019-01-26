@@ -52,6 +52,10 @@ header li{
 	border-width: thick;
 }
 
+.section{
+	border-top:#586e75 1px solid;
+}
+
 footer{
 	border-top:#586e75 1px solid;
 }
