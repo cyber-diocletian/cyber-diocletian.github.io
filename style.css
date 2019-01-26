@@ -7,7 +7,14 @@ body{
 }
 
 h1{
-	font-size:200%;
+	font-size: xx-large;
+	font-weight: bold;
+}
+
+h2{
+	font-size: x-large;
+	font-weight: bold;
+	background-color: #004040;
 }
 
 a{
@@ -24,10 +31,6 @@ a:hover{
 ul{
 	padding-left: 0;
 	margin-bottom: 5px;
-}
-
-header{
-	border-bottom:#586e75 1px solid;
 }
 
 header li{
@@ -50,12 +53,4 @@ header li{
 .mainbody img{
 	border-style: outset;
 	border-width: thick;
-}
-
-.section{
-	border-top:#586e75 1px solid;
-}
-
-footer{
-	border-top:#586e75 1px solid;
 }
