@@ -2,8 +2,9 @@ body{
 	background-color: #001010;
 	color:#00afaf;
 	text-align: center;
-	margin-left: 10%;
-	margin-right: 10%;
+	margin-left: 5%;
+	margin-right: 5%;
+	@media(min-width:60em){font-size: 125%};
 }
 
 h1{
