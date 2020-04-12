@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doom Map Name Generator</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>Tylermania</h1>
+    </header>
+
+<div class="mainbody">
+    <h2>Doom Map Name Generator</h2>
+    <p id="title-paragraph"></p>
+    <button onClick="generateTitle()">Generate Title</button>
+
+</div>
+
+<script>
+
+const titleParagraph = document.getElementById('title-paragraph');
+const prefixWords = ['abandoned', 'abominable', 'acid', 'artificial', 'ascetic', 'age of', 'ancient', 'angry', 'anime', 'ambient', 'astral', 'beastly', 'beautiful', 'beyond', 'black', 'bleak', 'blood', 'bird', 'book of', 'boreal', 'bittersweet', 'cat', 'celestial', 'cherry', 'cold', 'column', 'comforting', 'conquering', 'computer', 'computerized', 'corrupt', 'counterfeit', 'cruel', 'crystal', 'cyber', 'damned', 'dark', 'dawn', 'dead', 'deadly', 'decadent', 'defiled', 'demonic', 'desecrated', 'destroying', 'destroyed', 'devil', 'diamond', 'diabolical', 'digital', 'digitized', 'disgraced', 'divine', 'doomed', "dragon's", 'dream', 'dystopian', 'earthly', 'elder', 'enchanted', 'enflamed', 'enlightened', 'entombed', 'emerald', 'eternal', 'external', 'extinct', 'evil', 'fallen', 'fatherly', 'female', 'feminine', 'fetish', 'final', 'fire', 'forbidden', 'former', 'forgotten', 'future', 'ghost', 'ghostly', 'glorious', 'golden', 'gothic', 'grim', 'hallowed', 'haunted', 'hazy', 'healing', 'heartbroken', 'heavenly', 'hell', 'holographic', 'holy', 'horrific', 'hyper', 'ice', 'infernal', 'internal', 'involuntary', 'jade', "king's", 'lesser', 'lonely', "lord's", 'love', 'lovely', "lover's", 'lunar', 'luxurious', 'magic', 'medieval', 'melancholy', 'mental', 'midnight', 'mind', 'minor', 'moonlight', 'monastic', 'mysterious', 'mystical', 'neon', 'night', 'nocturnal', 'occult', 'original', 'pain', 'painful', 'perverted', 'phantasmic', 'phantom', 'possessed', 'pristine', 'psychic', 'psychological', 'pure', 'putrid', 'rainbow', "regret's", 'remote', 'romantic', 'royal', 'ruined', 'sacred', 'sadistic', 'satanic', 'secluded', 'secret', 'sentimental', 'shadow', 'skeleton', 'snow', 'silent', 'sonic', 'solitary', 'spectral', 'spirit', 'spiritual', 'strange', 'super', 'suspended', 'sweet', 'synthetic', 'synthesized', 'temple of', 'the', 'thorned', 'thousand-year', 'tomb of', 'tortured', 'torturing', 'tribal', 'twilight', 'twin', 'undead', 'underground', 'under the', 'unearthly', 'unholy', 'unknowing', 'utopian', 'vicious', 'vile', 'virgins of the', 'virtual', 'virtuous', 'visual', 'water', 'white', 'wicked', 'winter', 'witch', "wizard's", "woman's", 'woman of', 'womanly', 'young'];
+const suffixWords = ['abyss', 'angel', 'archer', 'ascent', 'aura', 'autumn', 'avatar', 'beast', 'beneath', 'body', 'book', 'bride', 'butterfly', 'cat', 'cathedral', 'castle', 'cavern', 'cemetery', 'chord', 'citadel', 'city', 'cloud', 'codex', 'column', 'collosus', 'comfort', 'computer', 'confession', 'cosmos', 'coven', 'creature', 'crown', 'cry', 'curse', 'dawn', 'death', 'decadence', 'defilement', 'defiler', 'demon', 'descent', 'desire', 'despair', 'domain', 'dream', 'drone', 'dungeon', 'dusk', 'eclipse', 'emperor', 'enclosure', 'enchantress', 'estate', 'eternity', 'eyes', 'fantasy', 'feast', 'forest', 'fortress', 'fountain', 'galaxy', 'gardens', 'gate', 'ghost', 'girl', 'glory', 'hag', 'halls', 'hatred', 'harem', 'heart', 'hell', 'hellfire', 'house', 'illusion', 'interface', 'isle', 'journey', 'king', 'kingdom', 'knight', 'labyrinth', 'lady', 'lake', 'land', 'level', 'library', 'life', 'light', 'longing', 'lord', 'lore', 'love', 'lovers', 'luxury', 'mage', 'mansion', 'massacre', 'meadow', 'minion', 'mist', 'moon', 'moor', 'monastery', 'monk', 'mother', 'mountain', 'mystery', 'necromancer', 'nest', 'night', 'nightmare', 'nymph', 'obsession', 'destruction', 'organism', 'palace', 'paladin', 'passage', 'passion', 'paradise', 'polygon', 'pool', 'possesion', 'priest', 'priestess', 'prince', 'princess', 'prophet', 'queen', 'quest', 'rain', 'reality', 'realm', 'revenge', 'reverie', 'rogue', 'romance', 'ruins', 'sarcophagus', 'sea', 'seducer', 'seduction', 'seductress', 'shadow', 'shaman', 'sin', 'skeleton', 'skull', 'slave', 'slough', 'song', 'sorcerer', 'spire', 'splendor', 'storm', 'stream', 'succubus', 'summoner', 'sun', 'sword', 'swordsman', 'symphony', 'tomb', 'torturer', 'tower', 'town', 'universe', 'vampire', 'view', 'virgin', 'virtues', 'vision', 'visitation', 'warrior', 'waterfall', 'web', 'wedding', 'wind', 'window', 'winter', 'wizard', 'woman', 'worlds'];
+
+function generateTitle(){
+    randomChoice = Math.floor(Math.random() * 4);
+
+    if (randomChoice === 0){
+        songTitle = prefixWords[Math.floor(Math.random() * prefixWords.length)] + " " + suffixWords[Math.floor(Math.random() * suffixWords.length)] + 
+        " of the " + suffixWords[Math.floor(Math.random() * suffixWords.length)];
+    }
+    if (randomChoice === 1){
+        songTitle = suffixWords[Math.floor(Math.random() * suffixWords.length)] + " of the " + prefixWords[Math.floor(Math.random() * prefixWords.length)] + 
+        " " + suffixWords[Math.floor(Math.random() * suffixWords.length)];
+    }
+    else{
+        songTitle = prefixWords[Math.floor(Math.random() * prefixWords.length)] + " " + suffixWords[Math.floor(Math.random() * suffixWords.length)];
+    }
+    
+    titleParagraph.innerHTML = songTitle;
+}
+
+</script>    
+</body>
+
+</html>
