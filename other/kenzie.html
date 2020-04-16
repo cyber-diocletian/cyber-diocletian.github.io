@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Default Title</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    
+<div>
+    <h1 id='main-title'></h1>
+</div>
+
+<div id='main-body'>
+    <ul id='the-list'>
+    </ul>
+</div>
+
+<button onClick=coolFunction()>Click Me</button>
+
+<script>
+
+let exampleJSON = '{"pageTitle":"💗", "name":"💗 Kenzie 💗", "word":"click the button"}';
+let myObject = JSON.parse(exampleJSON);
+let myArray = ['I', 'love', 'you', 'more', 'than', 'anything', 'bb', '<3', '😘'];
+
+document.getElementsByTagName("title")[0].innerHTML = myObject.pageTitle;
+document.getElementById("main-title").innerHTML = myObject.name;
+document.getElementById("main-body").innerHTML = myObject.word;
+
+const mainBody = document.getElementById("main-body");
+let myList = document.createElement('ul');
+
+mainBody.appendChild(myList);
+
+let counter = 0;
+
+function coolFunction(){
+    const li = document.createElement("li");
+    li.textContent = myArray[counter];
+    myList.appendChild(li);
+    counter++; 
+    if (counter > myArray.length){
+        counter = 0;
+    }
+}
+
+</script>
+</body>
+</html>
