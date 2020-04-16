@@ -6,9 +6,8 @@ body{
 	background-color: #001010;
 	color:#00afaf;
 	text-align: center;
-	margin-left: 5%;
-	margin-right: 5%;
-	@media(min-width:60em){font-size: 125%};
+	max-width: 100%;
+	height: auto;
 }
 
 h1{
@@ -52,11 +51,15 @@ header li{
 	font-size: 105%;
 }
 
-.mainbody li{
-	list-style-type: none;
-}
-
 .mainbody img{
+	max-width: 100%;
+	height: auto;
 	border-style: outset;
 	border-width: thick;
+}
+
+.title{
+	font-size: x-large;
+	font-weight: bold;
+	background-color: #004040;
 }
