@@ -21,6 +21,10 @@ h2{
 	background-color: #004040;
 }
 
+h3{
+	color:#dddddd;
+}
+
 a{
 	color: inherit;
 	text-transform: lowercase;
@@ -62,4 +66,5 @@ header li{
 	font-size: x-large;
 	font-weight: bold;
 	background-color: #004040;
+	color:#dddddd;
 }
