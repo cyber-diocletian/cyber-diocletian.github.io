@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cistercian Numeral Generator</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <header>
+        <a href="..\index.html">
+            <h1>Tylermania</h1>
+        </a>
+    </header>
+
+    
+<div class="mainbody">
+    <h2>Cistercian Numeral Generator</h2>
+    <canvas id="myCanvas" width="400" height="600" 
+        style="border:1px solid #000000; background-color: white;"></canvas>
+        <br>
+    <p>Enter a number from 0-9999</p>
+    <input type="text" id="input-number">
+    <button onClick="generateNumeral()">Generate Numeral</button>
+    <p id="number-paragraph"></p>
+</div>
+
+
+</body>
+
+<script>
+
+const numberParagraph = document.getElementById('number-paragraph');
+
+
+function generateNumeral(){
+    let inputNumber = document.getElementById("input-number").value;
+    numberParagraph.innerHTML = inputNumber;
+    //inputNumber = parseInt(inputNumber);
+    console.log(typeof(inputNumber))
+
+    let inputNumberArray = Array.from(inputNumber);
+    console.log(inputNumberArray);
+
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.moveTo(200, 50);
+    ctx.lineTo(200, 550);
+    ctx.stroke();
+
+    //draw ones digit
+    switch (parseInt(inputNumberArray.slice(-1)[0])){
+        case 1:
+            ctx.beginPath();
+            ctx.moveTo(200, 50);
+            ctx.lineTo(300, 50);
+            ctx.stroke();
+            break;
+
+        case 2:
+            ctx.beginPath();
+            ctx.moveTo(200, 150);
+            ctx.lineTo(300, 150);
+            ctx.stroke();
+            break;
+
+        case 3:
+            ctx.beginPath();
+            ctx.moveTo(200, 50);
+            ctx.lineTo(300, 150);
+            ctx.stroke();
+            break;
+
+        case 4:
+            ctx.beginPath();
+            ctx.moveTo(200, 150);
+            ctx.lineTo(300, 50);
+            ctx.stroke();
+            break;
+
+        case 5:
+            ctx.beginPath();
+            ctx.moveTo(200, 50);
+            ctx.lineTo(300, 50);
+            ctx.moveTo(200, 150);
+            ctx.lineTo(300, 50);
+            ctx.stroke();
+            break;
+
+        case 6:
+            ctx.beginPath();
+            ctx.moveTo(300, 50);
+            ctx.lineTo(300, 150);
+            ctx.stroke();
+            break;
+
+        case 7:
+            ctx.beginPath();
+            ctx.moveTo(200, 50);
+            ctx.lineTo(300, 50);
+            ctx.moveTo(300, 50);
+            ctx.lineTo(300, 150);
+            ctx.stroke();
+            break;
+
+        case 8:
+            ctx.beginPath();
+            ctx.moveTo(200, 150);
+            ctx.lineTo(300, 150);
+            ctx.moveTo(300, 50);
+            ctx.lineTo(300, 150);
+            ctx.stroke();
+            break;
+
+        case 9:
+            ctx.beginPath();
+            ctx.moveTo(200, 50);
+            ctx.lineTo(300, 50);
+            ctx.moveTo(200, 150);
+            ctx.lineTo(300, 150);
+            ctx.moveTo(300, 50);
+            ctx.lineTo(300, 150);
+            ctx.stroke();
+            break;
+
+        default:
+            console.log("not a valid number")
+            break;
+    }
+
+    //draw tens digit
+    //ctx.moveTo(horizontal pos, vertical pos);
+    if(inputNumberArray.length > 1){
+        switch (parseInt(inputNumberArray.slice(-2)[0])){
+            case 1:
+                ctx.beginPath();
+                ctx.moveTo(200, 50);
+                ctx.lineTo(100, 50);
+                ctx.stroke();    
+                break;
+
+            case 2:
+                ctx.beginPath();
+                ctx.moveTo(200, 150);
+                ctx.lineTo(100, 150);
+                ctx.stroke();    
+                break;
+
+            case 3:
+                ctx.beginPath();
+                ctx.moveTo(200, 50);
+                ctx.lineTo(100, 150);
+                ctx.stroke();    
+                break;
+
+            case 4:
+                ctx.beginPath();
+                ctx.moveTo(200, 150);
+                ctx.lineTo(100, 50);
+                ctx.stroke();    
+                break;
+
+            case 5:
+                ctx.beginPath();
+                ctx.moveTo(200, 50);
+                ctx.lineTo(100, 50);
+                ctx.moveTo(200, 150);
+                ctx.lineTo(100, 50);
+                ctx.stroke();    
+                break;            
+
+            case 6:
+                ctx.beginPath();
+                ctx.moveTo(100, 50);
+                ctx.lineTo(100, 150);
+                ctx.stroke();    
+                break;
+
+            case 7:
+                ctx.beginPath();
+                ctx.moveTo(200, 50);
+                ctx.lineTo(100, 50);
+                ctx.moveTo(100, 50);
+                ctx.lineTo(100, 150);
+                ctx.stroke();    
+                break;
+
+            case 8:
+                ctx.beginPath();
+                ctx.moveTo(200, 150);
+                ctx.lineTo(100, 150);
+                ctx.moveTo(100, 50);
+                ctx.lineTo(100, 150);
+                ctx.stroke();    
+                break;
+
+            case 9:
+                ctx.beginPath();
+                ctx.moveTo(200, 50);
+                ctx.lineTo(100, 50);
+                ctx.moveTo(200, 150);
+                ctx.lineTo(100, 150);
+                ctx.moveTo(100, 50);
+                ctx.lineTo(100, 150);
+                ctx.stroke();    
+                break;
+
+            default:
+                console.log("either 0 or not a valid number")
+                break;
+        }
+    }
+
+    //draw hundreds digit
+    //ctx.moveTo(horizontal pos, vertical pos);
+    if(inputNumberArray.length > 2){
+        switch (parseInt(inputNumberArray.slice(-3)[0])){
+            case 1:
+                ctx.beginPath();
+                ctx.moveTo(200, 550);
+                ctx.lineTo(300, 550);
+                ctx.stroke();    
+                break;
+
+            case 2:
+                ctx.beginPath();
+                ctx.moveTo(200, 450);
+                ctx.lineTo(300, 450);
+                ctx.stroke();    
+                break;
+
+            case 3:
+                ctx.beginPath();
+                ctx.moveTo(200, 550);
+                ctx.lineTo(300, 450);
+                ctx.stroke();    
+                break;
+
+            case 4:
+                ctx.beginPath();
+                ctx.moveTo(200, 450);
+                ctx.lineTo(300, 550);
+                ctx.stroke();    
+                break;
+
+            case 5:
+                ctx.beginPath();
+                ctx.moveTo(200, 550);
+                ctx.lineTo(300, 550);
+                ctx.moveTo(200, 450);
+                ctx.lineTo(300, 550);
+                ctx.stroke();    
+                break;
+
+            case 6:
+                ctx.beginPath();
+                ctx.moveTo(300, 450);
+                ctx.lineTo(300, 550);
+                ctx.stroke();    
+                break;
+
+            case 7:
+                ctx.beginPath();
+                ctx.moveTo(300, 450);
+                ctx.lineTo(300, 550);
+                ctx.moveTo(200, 550);
+                ctx.lineTo(300, 550);
+                ctx.stroke();    
+                break;
+            
+            case 8:
+                ctx.beginPath();
+                ctx.moveTo(200, 450);
+                ctx.lineTo(300, 450);
+                ctx.moveTo(300, 450);
+                ctx.lineTo(300, 550);
+                ctx.stroke();    
+                break;
+
+            case 9:
+                ctx.beginPath();
+                ctx.moveTo(200, 550);
+                ctx.lineTo(300, 550);
+                ctx.moveTo(200, 450);
+                ctx.lineTo(300, 450);
+                ctx.moveTo(300, 450);
+                ctx.lineTo(300, 550);
+                ctx.stroke();    
+                break;
+
+            default:
+                console.log("either 0 or not a valid number")
+                break;
+        }
+    }
+
+    //draw thousands digit
+    //ctx.moveTo(horizontal pos, vertical pos);
+    if(inputNumberArray.length > 3){
+        switch (parseInt(inputNumberArray.slice(-4)[0])){
+            case 1:
+                ctx.beginPath();
+                ctx.moveTo(200, 550);
+                ctx.lineTo(100, 550);
+                ctx.stroke();    
+                break;
+
+            case 2:
+                ctx.beginPath();
+                ctx.moveTo(200, 450);
+                ctx.lineTo(100, 450);
+                ctx.stroke();    
+                break;
+
+            case 3:
+                ctx.beginPath();
+                ctx.moveTo(200, 550);
+                ctx.lineTo(100, 450);
+                ctx.stroke();    
+                break;
+
+            case 4:
+                ctx.beginPath();
+                ctx.moveTo(200, 450);
+                ctx.lineTo(100, 550);
+                ctx.stroke();    
+                break;
+
+            case 5:
+                ctx.beginPath();
+                ctx.moveTo(200, 550);
+                ctx.lineTo(100, 550);
+                ctx.moveTo(200, 450);
+                ctx.lineTo(100, 550);
+                ctx.stroke();    
+                break;
+
+            case 6:
+                ctx.beginPath();
+                ctx.moveTo(100, 450);
+                ctx.lineTo(100, 550);
+                ctx.stroke();    
+                break;
+
+            case 7:
+                ctx.beginPath();
+                ctx.moveTo(200, 550);
+                ctx.lineTo(100, 550);
+                ctx.moveTo(100, 450);
+                ctx.lineTo(100, 550);
+                ctx.stroke();    
+                break;
+
+            case 8:
+                ctx.beginPath();
+                ctx.moveTo(200, 450);
+                ctx.lineTo(100, 450);
+                ctx.moveTo(100, 450);
+                ctx.lineTo(100, 550);
+                ctx.stroke();    
+                break;
+
+            case 9:
+                ctx.beginPath();
+                ctx.moveTo(200, 550);
+                ctx.lineTo(100, 550);
+                ctx.moveTo(200, 450);
+                ctx.lineTo(100, 450);
+                ctx.moveTo(100, 450);
+                ctx.lineTo(100, 550);
+                ctx.stroke();    
+                break;
+
+            default:
+                console.log("either 0 or not a valid number")
+                break;
+        }
+    }
+}
+
+</script>
+</html>
